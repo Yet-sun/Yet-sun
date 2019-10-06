@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[基于LSTM的诗歌自动生成系统]]></title>
     <url>%2F2019%2F10%2F05%2F%E8%AF%97%E6%AD%8C%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E7%B3%BB%E7%BB%9F%2F</url>
-    <content type="text"><![CDATA[poem_lyrics_generationLSTM语言模型古诗生成，歌词生词，数据处理，网站一、主要文件说明 poem_app：Django组件 poem_backend：Django设置及路由配置 static：静态资源 templates：前端html文件 chinese_poem_generate：基于lstm模型的诗歌生成模型训练及验证 lyrics_generation：基于lstm模型的诗歌生成模型训练及验证 data_crawl: 数据爬取文件 data_processing：输出处理文件 lstm_model：基于lstm的概率语言模型进行歌词生成，train_lstm_word_based.py是训练代码，generateLyrics_word_based.py是生成代码 train_data：训练数据 二、使用说明1、训练数据1234567# lstm模型训练（古诗生成）&gt; cd ...chinese_poem_generate&gt; python train.py# lstm模型训练（歌词生成）&gt; cd ...lstm_model&gt; python train_lstm_word_based.py 2、生成歌词1234567# lstm模型生成歌词&gt; cd ...chinese_poem_generate&gt; python eval_poem.py# lstm模型生成歌词&gt; cd ...lstm_mode&gt; python generateLyrics_word_based.py 三、详细说明1、数据爬取主要爬取网易云音乐网页（https://music.163.com） 的林俊杰的歌词数据。 具体的代码在data_crawl文件夹中。 2、数据处理(1)古诗数据 生成词汇表，并将古诗转换为词向量，填充词向量并转化为np数组 (2)歌词数据 数据处理主要将数据爬取中的结果（多个歌曲文件）合并成一个文件，并去掉一些歌词生成的干扰信息，如歌手：林俊杰，作词：林俊杰等信息，另外，本任务是生成中文歌词，可以将一些英文歌词去掉。 3、生成古诗和歌词生成均使用了基于lstm的概率语言模型： 3.1 基于lstm的概率语言模型（1）模型结构如下： 古诗： 使用了2层LSTM，后面接了一个softmax 歌词： 本模型使用了2层LSTM，一层全连接层，全连接层后面接了一个softmax，也就是分类模型。 （2）结果展示： 以“中国牛逼”开头 12345678910111213141516171819202122232425262728293031中国牛逼不同太多你最见你不在甜如影杀开了耳丽苦结几的眼光披天前的就会想网碌水的步悉越流泪的机场身再友的跟底灯撑着学一个让爱的爱愿是所有说说只许你到我会好的也许你在数了脑海握着时夜我作头在山车难难你怎么好当你看到善变代表对你太感冒要你听到善变代表对你太感冒要你听到我有我最独特思考要你看到爱情不只华丽外灯是是爱的尽累与整气到熟为你的为你在我 四、参考博客https://blog.csdn.net/quiet_girl/article/details/84768821 https://www.jb51.net/article/137118.htm]]></content>
+    <content type="text"><![CDATA[前言 基于LSTM的语言模型，包含古诗生成，歌词生词，数据处理，并使用Django框架构建了网站 一、主要文件说明 poem_app：Django组件 poem_backend：Django设置及路由配置 static：静态资源 templates：前端html文件 chinese_poem_generate：基于lstm模型的诗歌生成模型训练及验证 lyrics_generation：基于lstm模型的诗歌生成模型训练及验证 data_crawl: 数据爬取文件 data_processing：输出处理文件 lstm_model：基于lstm的概率语言模型进行歌词生成，train_lstm_word_based.py是训练代码，generateLyrics_word_based.py是生成代码 train_data：训练数据 二、使用说明1、训练数据1234567# lstm模型训练（古诗生成）&gt; cd ...chinese_poem_generate&gt; python train.py# lstm模型训练（歌词生成）&gt; cd ...lstm_model&gt; python train_lstm_word_based.py 2、生成歌词1234567# lstm模型生成歌词&gt; cd ...chinese_poem_generate&gt; python eval_poem.py# lstm模型生成歌词&gt; cd ...lstm_mode&gt; python generateLyrics_word_based.py 三、详细说明1、数据爬取主要爬取网易云音乐网页（https://music.163.com） 的林俊杰的歌词数据。 具体的代码在data_crawl文件夹中。 2、数据处理(1)古诗数据 生成词汇表，并将古诗转换为词向量，填充词向量并转化为np数组 (2)歌词数据 数据处理主要将数据爬取中的结果（多个歌曲文件）合并成一个文件，并去掉一些歌词生成的干扰信息，如歌手：林俊杰，作词：林俊杰等信息，另外，本任务是生成中文歌词，可以将一些英文歌词去掉。 3、生成古诗和歌词生成均使用了基于lstm的概率语言模型： 3.1 基于lstm的概率语言模型（1）模型结构如下： 古诗： 使用了2层LSTM，后面接了一个softmax 歌词： 本模型使用了2层LSTM，一层全连接层，全连接层后面接了一个softmax，也就是分类模型。 （2）结果展示： 以“中国牛逼”开头 12345678910111213141516171819202122232425262728293031中国牛逼不同太多你最见你不在甜如影杀开了耳丽苦结几的眼光披天前的就会想网碌水的步悉越流泪的机场身再友的跟底灯撑着学一个让爱的爱愿是所有说说只许你到我会好的也许你在数了脑海握着时夜我作头在山车难难你怎么好当你看到善变代表对你太感冒要你听到善变代表对你太感冒要你听到我有我最独特思考要你看到爱情不只华丽外灯是是爱的尽累与整气到熟为你的为你在我 四、参考博客https://blog.csdn.net/quiet_girl/article/details/84768821 https://www.jb51.net/article/137118.htm]]></content>
       <categories>
         <category>机器学习&amp;&amp;深度学习</category>
       </categories>
@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[基于ssm框架的员工管理系统]]></title>
     <url>%2F2019%2F09%2F27%2FSSM-CSI%E5%91%98%E5%B7%A5%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%2F</url>
-    <content type="text"><![CDATA[SSM实现增删改查（前后端分离）开发 (pause update)核心技术栈12345项目框架：Spring/Spring MVC/Mybatis基础工具：Maven/Tomcat/MySQL/JDK1.8前端技术：vue业务功能功能 常规登录 用户管理 职位管理 部门管理 员工管理 公告管理 下载中心 部分页面 总结2019-9 本项目是跟几个同学一起做的，但是不知道他们github账号，这里就不贴了。这也是我第一个SSM小项目~ 为了写出更加优美的代码及更加具有可扩张性的项目,这里给出了一个可作为重构该项目的参考案例 ：https://github.com/YUbuntu0109/springboot-beginner/tree/refactor-190823 , 及一个可供近一步参考与学习的小项目 : https://github.com/YUbuntu0109/springboot-shiro 更多项目及日志请前往我的GitHub: https://github.com/Yet-sun/]]></content>
+    <content type="text"><![CDATA[前言基于SSM框架实现基础的增删改查（前后端分离）开发 (pause update)，开发系统为csi员工管理系统 核心技术栈12345项目框架：Spring/Spring MVC/Mybatis基础工具：Maven/Tomcat/MySQL/JDK1.8前端技术：Vue 业务功能 功能 常规登录 用户管理 职位管理 部门管理 员工管理 公告管理 下载中心 部分页面 总结2019-9 本项目是跟几个同学一起做的，但是不知道他们github账号，这里就不贴了。这也是我第一个SSM小项目~ 为了写出更加优美的代码及更加具有可扩张性的项目,这里给出了一个可作为重构该项目的参考案例 ：https://github.com/YUbuntu0109/springboot-beginner/tree/refactor-190823 , 及一个可供近一步参考与学习的小项目 : https://github.com/YUbuntu0109/springboot-shiro 更多项目及日志请前往我的GitHub: https://github.com/Yet-sun/]]></content>
       <categories>
         <category>网站开发</category>
       </categories>
@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[mysqlclient 1.3.13 or newer is required; you have 0.9.3.]]></title>
     <url>%2F2019%2F08%2F24%2Fmysqlclient-1-3-13-or-newer-is-required-you-have-0-9-3%2F</url>
-    <content type="text"><![CDATA[搭建Django2.2+Python3+MySQL时新建app时报错 django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3. 版本信息12345django 2.2.1mysqlclient 1.3.14python 3.6 原因 python3.6 myclient的版本过低，与Django不匹配 解决办法1.找到Python安装路径下的…\Lib\site-packages\django\db\backends\mysql\base.py文件 2.将文件中的如下代码注释： 12if version &lt; (1, 3, 3): raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__) 重新在项目manage.py路径下执行命令即可。]]></content>
+    <content type="text"><![CDATA[搭建Django2.2+Python3+MySQL时新建app时报错搭建Django2.2+Python3+MySQL时新建app时报错，错误信息如下： django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3. 版本信息12345django 2.2.1mysqlclient 1.3.14python 3.6 原因 python3.6 myclient的版本过低，与Django不匹配 解决办法1.找到Python安装路径下的…\Lib\site-packages\django\db\backends\mysql\base.py文件 2.将文件中的如下代码注释： 12if version &lt; (1, 3, 3): raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__) 重新在项目manage.py路径下执行命令即可。]]></content>
       <categories>
         <category>django</category>
       </categories>
@@ -36,7 +36,7 @@
   <entry>
     <title><![CDATA[LeetCode刷题]]></title>
     <url>%2F2019%2F08%2F23%2FLeetCode%E5%88%B7%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[说明 LeetCode刷题，按题号分，代码上传至本人github，文件名就是LeetCode上对应的题号，从简单难度开始做，做了一些上传一点 为了节省时间，是在LeetCode官网上在线编程的，也参考了很多讨论区的大佬的思路和代码，这里只是把做的题复制过来，没在本地写测试函数了 目前解题语言为C++，日后累计上去了会继续加入python等题解 欢迎大家批评指正━(｀∀´)ノ亻! 已解题目 1.两数之和 7.整数反转 9.回文数 13.罗马数字转整数 14.最长公共前缀 21.合并两个有序链表 27.移除元素 100.相同的树 101.对称二叉树 104.二叉树的最大深度 121.买卖股票的最佳时机 203. 移除链表元素 206.反转链表 217.存在重复元素 226.翻转二叉树 257.二叉树的所有路径 344.反转字符串 559.N叉树的最大深度 589.N叉树的前序遍历 590.N叉树的后序遍历]]></content>
+    <content type="text"><![CDATA[说明 LeetCode刷题，按题号分，代码上传至本人github，文件名就是LeetCode上对应的题号，从简单难度开始做，做了一些上传一点。为了节省时间，是在LeetCode官网上在线编程的，也参考了很多讨论区的大佬的思路和代码，这里只是把做的题复制过来，没在本地写测试函数了。目前解题语言为C++，日后累计上去了会继续加入python等题解。欢迎大家批评指正━(｀∀´)ノ亻! 已解题目 1.两数之和 7.整数反转 9.回文数 13.罗马数字转整数 14.最长公共前缀 21.合并两个有序链表 27.移除元素 100.相同的树 101.对称二叉树 104.二叉树的最大深度 121.买卖股票的最佳时机 203. 移除链表元素 206.反转链表 217.存在重复元素 226.翻转二叉树 257.二叉树的所有路径 344.反转字符串 559.N叉树的最大深度 589.N叉树的前序遍历 590.N叉树的后序遍历]]></content>
       <categories>
         <category>coding</category>
       </categories>
