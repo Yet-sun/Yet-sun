@@ -62,12 +62,12 @@
 <meta property="og:site_name" content="诗上蔓の博客">
 <meta property="og:description" content="前言 基于LSTM的语言模型，包含古诗生成，歌词生词，数据处理，并使用Django框架构建了网站">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/Yet-sun/poem_lyrics_generation/blob/master/poem_backend/poem_app/lyrics_generation/lstm_model/lstm_structure.png">
-<meta property="og:updated_time" content="2019-10-06T14:11:49.965Z">
+<meta property="og:image" content="http://pyyoiasrq.bkt.clouddn.com/lstm_structure.png-ssm">
+<meta property="og:updated_time" content="2019-10-06T16:36:59.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于LSTM的诗歌自动生成系统">
 <meta name="twitter:description" content="前言 基于LSTM的语言模型，包含古诗生成，歌词生词，数据处理，并使用Django框架构建了网站">
-<meta name="twitter:image" content="https://github.com/Yet-sun/poem_lyrics_generation/blob/master/poem_backend/poem_app/lyrics_generation/lstm_model/lstm_structure.png">
+<meta name="twitter:image" content="http://pyyoiasrq.bkt.clouddn.com/lstm_structure.png-ssm">
   <link rel="canonical" href="http://iamsy.cn/2019/10/05/诗歌自动生成系统/">
 
 
@@ -295,7 +295,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-06 22:11:49" itemprop="dateModified" datetime="2019-10-06T22:11:49+08:00">2019-10-06</time>
+                <time title="修改时间：2019-10-07 00:36:59" itemprop="dateModified" datetime="2019-10-07T00:36:59+08:00">2019-10-07</time>
               </span>
             
           
@@ -353,7 +353,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>1.4k</span>
+              <span>1.3k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -403,9 +403,9 @@
 <li><p>train_data：训练数据</p>
 </li>
 </ul>
-<h2 id="二、使用说明"><a href="#二、使用说明" class="headerlink" title="二、使用说明"></a>二、使用说明</h2><h3 id="1、训练数据"><a href="#1、训练数据" class="headerlink" title="1、训练数据"></a>1、训练数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># lstm模型训练（古诗生成）</span><br><span class="line">&gt; cd ...chinese_poem_generate</span><br><span class="line">&gt; python train.py</span><br><span class="line"></span><br><span class="line"># lstm模型训练（歌词生成）</span><br><span class="line">&gt; cd ...lstm_model</span><br><span class="line">&gt; python train_lstm_word_based.py</span><br></pre></td></tr></table></figure>
+<h2 id="二、使用说明"><a href="#二、使用说明" class="headerlink" title="二、使用说明"></a>二、使用说明</h2><h3 id="1、训练数据"><a href="#1、训练数据" class="headerlink" title="1、训练数据"></a>1、训练数据</h3><figure class="highlight plain"><figcaption><span>lstm模型训练（古诗生成）</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd ...chinese_poem_generate</span><br><span class="line">&gt; python train.py</span><br><span class="line"></span><br><span class="line"># lstm模型训练（歌词生成）</span><br><span class="line">&gt; cd ...lstm_model</span><br><span class="line">&gt; python train_lstm_word_based.py</span><br></pre></td></tr></table></figure>
 
-<h3 id="2、生成歌词"><a href="#2、生成歌词" class="headerlink" title="2、生成歌词"></a>2、生成歌词</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># lstm模型生成歌词</span><br><span class="line">&gt; cd ...chinese_poem_generate</span><br><span class="line">&gt; python eval_poem.py</span><br><span class="line"></span><br><span class="line"># lstm模型生成歌词</span><br><span class="line">&gt; cd ...lstm_mode</span><br><span class="line">&gt; python generateLyrics_word_based.py</span><br></pre></td></tr></table></figure>
+<h3 id="2、生成歌词"><a href="#2、生成歌词" class="headerlink" title="2、生成歌词"></a>2、生成歌词</h3><figure class="highlight plain"><figcaption><span>lstm模型生成歌词</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; cd ...chinese_poem_generate</span><br><span class="line">&gt; python eval_poem.py</span><br><span class="line"></span><br><span class="line"># lstm模型生成歌词</span><br><span class="line">&gt; cd ...lstm_mode</span><br><span class="line">&gt; python generateLyrics_word_based.py</span><br></pre></td></tr></table></figure>
 
 <h2 id="三、详细说明"><a href="#三、详细说明" class="headerlink" title="三、详细说明"></a>三、详细说明</h2><h3 id="1、数据爬取"><a href="#1、数据爬取" class="headerlink" title="1、数据爬取"></a>1、数据爬取</h3><p>主要爬取网易云音乐网页（<a href="https://music.163.com）" target="_blank" rel="noopener">https://music.163.com）</a> 的林俊杰的歌词数据。</p>
 <p>具体的代码在data_crawl文件夹中。</p>
@@ -422,11 +422,11 @@
 <ul>
 <li>歌词：</li>
 </ul>
-<p><img src="https://github.com/Yet-sun/poem_lyrics_generation/blob/master/poem_backend/poem_app/lyrics_generation/lstm_model/lstm_structure.png" alt="基于lstm的概率语言模型结构"></p>
+<p><img src="http://pyyoiasrq.bkt.clouddn.com/lstm_structure.png-ssm" alt="基于lstm的概率语言模型结构"></p>
 <p>本模型使用了2层LSTM，一层全连接层，全连接层后面接了一个softmax，也就是分类模型。</p>
 <p>（2）结果展示：</p>
 <p>以“中国牛逼”开头</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">中国牛逼</span><br><span class="line">不同太多</span><br><span class="line">你最见你</span><br><span class="line">不在</span><br><span class="line">甜</span><br><span class="line">如影</span><br><span class="line">杀开了耳丽</span><br><span class="line">苦结几的眼光</span><br><span class="line">披天前的就会想</span><br><span class="line">网碌水的步悉</span><br><span class="line">越流泪的机场</span><br><span class="line">身再友的跟底灯撑着学一个让爱的爱</span><br><span class="line">愿是所有说说</span><br><span class="line">只许你到我会好的</span><br><span class="line">也许你在</span><br><span class="line">数了脑海</span><br><span class="line">握着时夜</span><br><span class="line">我作头在</span><br><span class="line">山车难难</span><br><span class="line">你怎么好</span><br><span class="line">当你看到</span><br><span class="line">善变代表对你太感冒</span><br><span class="line">要你听到</span><br><span class="line">善变代表对你太感冒</span><br><span class="line">要你听到</span><br><span class="line">我有我最独特思考</span><br><span class="line">要你看到</span><br><span class="line">爱情不只华丽</span><br><span class="line">外灯是是爱的尽</span><br><span class="line">累与整气到熟</span><br><span class="line">为你的为你在我</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">不同太多</span><br><span class="line">你最见你</span><br><span class="line">不在</span><br><span class="line">甜</span><br><span class="line">如影</span><br><span class="line">杀开了耳丽</span><br><span class="line">苦结几的眼光</span><br><span class="line">披天前的就会想</span><br><span class="line">网碌水的步悉</span><br><span class="line">越流泪的机场</span><br><span class="line">身再友的跟底灯撑着学一个让爱的爱</span><br><span class="line">愿是所有说说</span><br><span class="line">只许你到我会好的</span><br><span class="line">也许你在</span><br><span class="line">数了脑海</span><br><span class="line">握着时夜</span><br><span class="line">我作头在</span><br><span class="line">山车难难</span><br><span class="line">你怎么好</span><br><span class="line">当你看到</span><br><span class="line">善变代表对你太感冒</span><br><span class="line">要你听到</span><br><span class="line">善变代表对你太感冒</span><br><span class="line">要你听到</span><br><span class="line">我有我最独特思考</span><br><span class="line">要你看到</span><br><span class="line">爱情不只华丽</span><br><span class="line">外灯是是爱的尽</span><br><span class="line">累与整气到熟</span><br><span class="line">为你的为你在我</span><br></pre></td></tr></table></figure>
 
 <h2 id="四、参考博客"><a href="#四、参考博客" class="headerlink" title="四、参考博客"></a>四、参考博客</h2><p><a href="https://blog.csdn.net/quiet_girl/article/details/84768821" target="_blank" rel="noopener">https://blog.csdn.net/quiet_girl/article/details/84768821</a> </p>
 <p><a href="https://www.jb51.net/article/137118.htm" target="_blank" rel="noopener">https://www.jb51.net/article/137118.htm</a></p>
@@ -803,6 +803,15 @@ setInterval("createtime()",250);
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
