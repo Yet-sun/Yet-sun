@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[mysqlclient 1.3.13 or newer is required; you have 0.9.3.]]></title>
     <url>%2F2019%2F08%2F24%2Fmysqlclient-1-3-13-or-newer-is-required-you-have-0-9-3%2F</url>
-    <content type="text"><![CDATA[搭建Django2.2+Python3+MySQL时新建app时报错搭建Django2.2+Python3+MySQL时新建app时报错，错误信息如下： django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3. 版本信息12345django 2.2.1mysqlclient 1.3.14python 3.6 原因 python3.6 myclient的版本过低，与Django不匹配 解决办法1.找到Python安装路径下的…\Lib\site-packages\django\db\backends\mysql\base.py文件 2.将文件中的如下代码注释： 12if version &lt; (1, 3, 3): raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__) 重新在项目manage.py路径下执行命令即可。]]></content>
+    <content type="text"><![CDATA[前言搭建Django2.2+Python3+MySQL时新建app时报错，错误信息如下： django.core.exceptions.ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3. 版本信息12345django 2.2.1mysqlclient 1.3.14python 3.6 原因 python3.6 myclient的版本过低，与Django不匹配 解决办法1.找到Python安装路径下的…\Lib\site-packages\django\db\backends\mysql\base.py文件 2.将文件中的如下代码注释： 12if version &lt; (1, 3, 3): raise ImproperlyConfigured(&quot;mysqlclient 1.3.3 or newer is required; you have %s&quot; % Database.__version__) 重新在项目manage.py路径下执行命令即可。]]></content>
       <categories>
         <category>django</category>
       </categories>
